@@ -1,0 +1,18 @@
+Index,Type,Start,End,Task,BarSize,BarColor,MarkerSize,MarkerColor,MarkerShape,MarkerOffsetY,MarkerXPos,LabelFace, LabelColor, LabelSize
+1,bar,2019-06-01,2019-08-31,1st Year,8,#9bddf2,6,#9bddf2,0,0,,bold.italic,black,12
+2,bar,2019-06-01,2019-07-01,Collect data,8,#9bddf3,6,#9bddf3,0,0,,,black,10
+3,marker,2019-06-03,2019-07-13,Seminar,8,#9bddf4,6,#9bddf4,18,-0.15,center,italic,black,10
+4,bar,2019-06-15,2019-07-01,Data Analysis,8,#9bddf5,6,#9bddf5,0,0,,,black,10
+5,bar,2019-06-15,2019-08-31,Writing ,8,#9bddf6,6,#9bddf6,0,0,,,black,10
+6,marker,2019-08-31,2019-08-31,Conference 2019,8,#9bddf7,6,#9bddf7,18,0,center,italic,black,10
+7,bar,2019-09-01,2020-05-31,2nd Year,8,#eaff66,6,#eaff66,0,0,,bold.italic,black,12
+8,marker,2019-09-01,2019-09-01,Deployment,8,#eaff67,6,#eaff67,18,0,center,italic,black,10
+9,bar,2019-09-01,2020-02-01,Data Collection,8,#eaff68,6,#eaff68,0,0,,,black,10
+10,bar,2019-10-01,2020-02-01,Data Analysis,8,#eaff69,6,#eaff69,0,0,,,black,10
+11,bar,2020-02-01,2020-05-31,Writing,8,#eaff70,6,#eaff70,0,0,,,black,10
+12,marker,2020-05-31,2020-05-31,Conference 2020,8,#eaff71,6,#eaff71,18,0,center,italic,black,10
+13,bar,2020-06-01,2021-02-28,3rd Year,8,#f2a437,6,#f2a437,0,0,,bold.italic,black,12
+14,bar,2020-06-01,2020-10-01,Data Analysis,8,#f2a437,6,#f2a437,0,0,,,black,10
+15,bar,2020-10-01,2021-02-28,Writing,8,#f2a437,6,#f2a437,0,0,,,black,10
+16,marker,2021-02-28,2021-02-28,Conference 2021,8,#f2a437,6,#f2a437,18,0,center,italic,black,10
+17,bar,2020-10-01,2021-05-31,Thesis,8,#02ef71,6,#02ef71,0,0,,bold.italic,black,12

@@ -1,18 +1,17 @@
 Index,Type,Start,End,Task,BarSize,BarColor,MarkerSize,MarkerColor,MarkerShape,MarkerOffsetY,MarkerXPos,LabelFace, LabelColor, LabelSize
-1,bar,2019-06-01,2019-08-31,1st Year,8,#9bddf2,6,#9bddf2,0,0,,bold.italic,black,12
-2,bar,2019-06-01,2019-07-01,Collect data,8,#9bddf3,6,#9bddf3,0,0,,,black,10
-3,marker,2019-06-03,2019-07-13,Seminar,8,#9bddf4,6,#9bddf4,18,-0.15,center,italic,black,10
-4,bar,2019-06-15,2019-07-01,Data Analysis,8,#9bddf5,6,#9bddf5,0,0,,,black,10
-5,bar,2019-06-15,2019-08-31,Writing ,8,#9bddf6,6,#9bddf6,0,0,,,black,10
-6,marker,2019-08-31,2019-08-31,Conference 2019,8,#9bddf7,6,#9bddf7,18,0,center,italic,black,10
-7,bar,2019-09-01,2020-05-31,2nd Year,8,#eaff66,6,#eaff66,0,0,,bold.italic,black,12
-8,marker,2019-09-01,2019-09-01,Deployment,8,#eaff67,6,#eaff67,18,0,center,italic,black,10
-9,bar,2019-09-01,2020-02-01,Data Collection,8,#eaff68,6,#eaff68,0,0,,,black,10
-10,bar,2019-10-01,2020-02-01,Data Analysis,8,#eaff69,6,#eaff69,0,0,,,black,10
-11,bar,2020-02-01,2020-05-31,Writing,8,#eaff70,6,#eaff70,0,0,,,black,10
-12,marker,2020-05-31,2020-05-31,Conference 2020,8,#eaff71,6,#eaff71,18,0,center,italic,black,10
-13,bar,2020-06-01,2021-02-28,3rd Year,8,#f2a437,6,#f2a437,0,0,,bold.italic,black,12
-14,bar,2020-06-01,2020-10-01,Data Analysis,8,#f2a437,6,#f2a437,0,0,,,black,10
-15,bar,2020-10-01,2021-02-28,Writing,8,#f2a437,6,#f2a437,0,0,,,black,10
-16,marker,2021-02-28,2021-02-28,Conference 2021,8,#f2a437,6,#f2a437,18,0,center,italic,black,10
-17,bar,2020-10-01,2021-05-31,Thesis,8,#02ef71,6,#02ef71,0,0,,bold.italic,black,12
+1,bar,2021-06-01,2021-08-15,IMWUT Paper #1,8,#f2a437,6,#f2a437,0,0,,bold.italic,black,13
+2,bar,2021-06-01,2021-07-01,Coding,8,#f2a437,6,#f2a437,0,0,,,black,11
+3,bar,2021-07-01,2021-08-15,Writing,8,#f2a437,6,#f2a437,0,0,,,black,11
+4,bar,2021-06-01,2021-09-01,Nokia Bells Lab Internship,8,#9bddf2,6,#9bddf2,0,0,,bold.italic,black,13
+5,bar,2021-06-01,2021-08-15,IMWUT Paper #2 (Internship),8,#9bddf2,6,#9bddf2,0,0,,bold.italic,black,12
+6,bar,2021-06-01,2021-08-15,Writing,8,#9bddf2,6,#9bddf2,0,0,,,black,11
+7,bar,2021-06-01,2021-06-25,Study Set-up,8,#9bddf2,6,#9bddf2,0,0,,,black,11
+8,bar,2021-06-25,2021-07-15,Data Collection,8,#9bddf2,6,#9bddf2,0,0,,,black,11
+9,bar,2021-07-15,2021-08-15,Data Analysis,8,#9bddf2,6,#9bddf2,18,0,center,,black,11
+10,bar,2021-08-15,2021-12-01,Thesis Write-Up,8,#eaff66,6,#eaff66,0,0,,bold.italic,black,13
+11,bar,2021-08-15,2021-11-01,Related Work,8,#eaff66,6,#eaff66,0,0,,,black,11
+12,bar,2021-09-15,2021-11-01,Paper Chapters,8,#eaff66,6,#eaff66,0,0,,,black,11
+13,bar,2021-10-15,2021-11-15,Introduction,8,#eaff66,6,#eaff66,0,0,,,black,11
+14,bar,2021-11-01,2021-12-01,Discussion,8,#eaff66,6,#eaff66,0,0,,,black,11
+15,marker,2021-08-15,2021-08-15,IMWUT Aug Deadline,8,#f55a0c,10,#f55a0c,18,0,center,bold.italic,black,13
+16,marker,2021-11-15,2021-11-15,IMWUT Nov Deadline,8,#f55a0c,10,#f55a0c,18,0,center,bold.italic,black,13

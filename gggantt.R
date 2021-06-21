@@ -6,9 +6,9 @@ library(data.table)
 library(reshape2)
 library(Cairo)
 
-generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", fontFamily="Open Sans"){
+generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", fontFamily="Open Sans", date_label_size=1){
   # Custom theme for making a clean Gantt chart
-  theme_gantt <- function(base_size=11, base_family=fontFamily) {
+  theme_gantt <- function(base_size=17, base_family=fontFamily) {
     ret <- theme_bw(base_size, base_family) %+replace%
       theme(panel.background = element_rect(fill="#ffffff", colour=NA),
             axis.title.x=element_text(vjust=-0.2), axis.title.y=element_text(vjust=1.5),
@@ -25,14 +25,15 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
             strip.text=element_text(size=rel(1), family=fontFamily),
             strip.background=element_rect(fill="#ffffff", colour=NA),
             panel.spacing.y=unit(1.5, "lines"),
-            legend.key = element_blank())
+            legend.key = element_blank(),
+            plot.margin=grid::unit(c(10,10,10,10), "mm"))
     ret
   }
   
   if(!grepl("ndex", colnames(tasks)))
     tasks$Index <- seq(nrow(tasks),1,-1)
-  tasks$Start <- as.POSIXct(tasks$Start, origin="1970-01-01")
-  tasks$End <- as.POSIXct(tasks$End, origin="1970-01-01")
+  tasks$Start <- as.POSIXct(tasks$Start, origin="1970-01-01", tryFormats = c("%Y-%m-%d","%Y/%m/%d"))
+  tasks$End <- as.POSIXct(tasks$End, origin="1970-01-01",  tryFormats = c("%Y-%m-%d","%Y/%m/%d"))
   breaks <- tasks$Task
   labels <- breaks
   
@@ -118,7 +119,7 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
   }
   if(!("LabelSize" %in% colnames(tasks))){
     #tasks <- transform(tasks, LabelSize = as.character(LabelSize))
-    tasks$LabelSize <- "#E8E8E8"
+    tasks$LabelSize <- 15
   }
   
   
@@ -138,7 +139,7 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
     labs(x=NULL, y=NULL) +
     theme_gantt() +
     ggtitle(label = plotTitle) +
-    theme(axis.text.x=element_text(angle=0, hjust=0.5, size=7), axis.text.y=element_text(color=tasks$LabelColor, face=tasks$LabelFace, size=tasks$LabelSize))
+    theme(axis.text.x=element_text(angle=0, hjust=0.5, size=date_label_size), axis.text.y=element_text(color=tasks$LabelColor, face=tasks$LabelFace, size=tasks$LabelSize))
   
   return(list("timeline"=timeline))
 }
