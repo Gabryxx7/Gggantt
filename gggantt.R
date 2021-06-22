@@ -4,7 +4,7 @@ library(scales)
 library(Cairo)
 library(data.table)
 library(reshape2)
-library(Cairo)
+library(grid)
 
 generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", fontFamily="Open Sans", date_label_size=1){
   # Custom theme for making a clean Gantt chart
@@ -42,9 +42,9 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
   markers$Task <- ""
   markers$Project <- ""
   
-  if(!("MarkerSize" %in% colnames(markers))){
+  if(!("Size" %in% colnames(markers))){
     #markers <- transform(markers, MarkerSize = as.numeric(MarkerSize))
-    markers$MarkerSize <-9
+    markers$Size <-9
   }
   
   if(!("MarkerShape" %in% colnames(markers))){
@@ -52,8 +52,8 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
     markers$MarkerShape <-18
   }
   
-  if(!("MarkerColor" %in% colnames(markers))){
-    markers$MarkerColor <- as.factor("#E8E8E8")
+  if(!("Color" %in% colnames(markers))){
+    markers$Color <- as.factor("#E8E8E8")
     #markers <- transform(markers, MarkerColor = as.character(MarkerColor))
   }
   
@@ -85,14 +85,14 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
   
   bars <- tasks[grep("bar", tasks$Type),]
   
-  if(!("BarColor" %in% colnames(bars))){
+  if(!("Color" %in% colnames(bars))){
    # bars <- transform(bars, BarColor = as.character(BarColor))
-    bars$BarColor <- "#E8E8E8"
+    bars$Color <- "#E8E8E8"
   }
   
-  if(!("BarSize" %in% colnames(bars))){
+  if(!("Size" %in% colnames(bars))){
     #bars <- transform(bars, BarSize = as.character(BarSize))
-    bars$BarSize <- "#E8E8E8"
+    bars$Size <- "#E8E8E8"
   }
   
   # Build plot
@@ -101,6 +101,11 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
   if(!is.null(vlines)){
     vlines$Date <- as.POSIXct(vlines$Date, origin="1970-01-01")
     timeline <- timeline + geom_vline(data=vlines, aes(xintercept=Date, color=Color, linetype=LineType, size=Size))
+  }
+  else{
+    vlines <- tasks[grep("vline", tasks$Type),]
+    timeline <- timeline + geom_vline(data=vlines, aes(xintercept=Start, color=Color, linetype="dotted", size=Size))
+    
   }
   
   if(!is.null(hlines))
@@ -125,10 +130,10 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
   
   timeline <- timeline +
     geom_vline(data=yearsVlines,aes(xintercept=date, color="grey70", linetype="solid", size=0.65)) +
-    geom_segment(data=bars, aes(x=Start, xend=End, y=Index, yend=Index, color=BarColor, size=BarSize)) + 
-    geom_point(data=markersStart, mapping=aes(x=PosX, y=PosY, size=MarkerSize-0.5, color=MarkerColor, shape=MarkerShape)) +
-    geom_point(data=markersEnd, mapping=aes(x=PosX, y=PosY, size=MarkerSize-0.5, color=MarkerColor, shape=MarkerShape)) +
-    geom_point(data=markersCenter, mapping=aes(x=PosX, y=PosY, size=MarkerSize-0.5, color=MarkerColor, shape=MarkerShape)) +
+    geom_segment(data=bars, aes(x=Start, xend=End, y=Index, yend=Index, color=Color, size=Size)) + 
+    geom_point(data=markersStart, mapping=aes(x=PosX, y=PosY, size=Size-0.5, color=Color, shape=MarkerShape)) +
+    geom_point(data=markersEnd, mapping=aes(x=PosX, y=PosY, size=Size-0.5, color=Color, shape=MarkerShape)) +
+    geom_point(data=markersCenter, mapping=aes(x=PosX, y=PosY, size=Size-0.5, color=Color, shape=MarkerShape)) +
     scale_color_identity() +
     scale_shape_identity() +
     scale_linetype_identity() +
@@ -140,6 +145,21 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
     theme_gantt() +
     ggtitle(label = plotTitle) +
     theme(axis.text.x=element_text(angle=0, hjust=0.5, size=date_label_size), axis.text.y=element_text(color=tasks$LabelColor, face=tasks$LabelFace, size=tasks$LabelSize))
+  
+  
+  for(i in 1:nrow(vlines)){
+    xval <- vlines$Start[[i]]
+    vline_color <- vlines$LabelColor[[i]]
+    gtext <- textGrob(vlines$Task[[i]], y = -.07, gp = gpar(col = vline_color))
+    gline <- linesGrob(y = c(-.01, .01),  gp = gpar(col = vline_color, lwd = 2))
+    timeline <- timeline + annotation_custom(gtext, xmin=xval, xmax=xval, ymin=-Inf, ymax=Inf) +
+      annotation_custom(gline, xmin=xval, xmax=xval, ymin=-Inf, ymax=Inf)
+  }
+  
+  g <- ggplotGrob(timeline)
+  g$layout$clip[g$layout$name=="panel"] <- "off"
+  # g <- grid.arrange(g)
+  grid.draw(g)
   
   return(list("timeline"=timeline))
 }

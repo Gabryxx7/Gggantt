@@ -1,0 +1,63 @@
+---
+title: "Gantt charts in R (and `shiny`)"
+output:
+  md_document:
+    variant: gfm
+    preserve_yaml: TRUE
+params: 
+  fig_base_path: "C:\\Users\\Gabryxx7\\Documents\\GitHub\\blog\\assets\\gabryxx7\\r_figures"
+knit: (function(input, ...) {
+  rmarkdown::render(input=input,
+    output_file=paste0(Sys.Date(),'-',xfun::sans_ext(basename(input)),'.md'),
+    encoding = encoding,
+    output_dir="C:\\Users\\Gabryxx7\\Documents\\GitHub\\blog\\blog\\coding\\_posts")
+  })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set( base.dir=params$fig_base_path,
+                      base.url="/assets/gabryxx7/r_figures/")
+knitr::opts_chunk$set(echo = TRUE,
+                      strip.white=TRUE,
+                      message=FALSE,
+                      warning=FALSE,
+                      results="markup",
+                      out.format="jekyll",
+                      class.output="plaintext",
+                      out.extra = "",
+                      fig.path = paste0(Sys.Date(),'-',xfun::sans_ext(basename(knitr::current_input())),"/"))
+
+```
+
+## R Markdown
+
+Alright so I am finally doing it! I am describing how I make Gantt charts in R, and how I want to make it easier to generate them through `shiny` dashboards.
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(tidyverse)
+vlines <- tribble(
+  ~Date, ~LineType, ~Size, ~Color,
+  "2020-01-01", "solid", 0.6, "grey80",
+  "2021-01-01", "solid", 0.6, "grey80")
+summary(cars)
+```
+
+# Title 2
+So Imma going to try to add a few extra lines and see what the output is going to be
+
+```{r mtcars}
+summary(mtcars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
