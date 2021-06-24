@@ -104,7 +104,7 @@ generateGantt <- function(tasks, hlines, vlines=NULL, plotTitle="Timeline", font
   }
   else{
     vlines <- tasks[grep("vline", tasks$Type),]
-    timeline <- timeline + geom_vline(data=vlines, aes(xintercept=Start, color=Color, linetype="dotted", size=Size))
+    timeline <- timeline + geom_vline(data=vlines, aes(xintercept=Start, color=Color, linetype=Extra, size=Size))
     
   }
   

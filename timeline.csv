@@ -1,20 +1,22 @@
-Index,Type,Start,End,Task,Size,Color,MarkerShape,MarkerOffsetY,MarkerXPos,LabelFace, LabelColor, LabelSize
-1,bar,2021-06-01,2021-08-15,IMWUT Paper #1,8,#f2a437,0,0,,bold.italic,black,13
-2,bar,2021-06-01,2021-07-01,Coding,8,#f2a437,0,0,,,black,11
-3,bar,2021-07-01,2021-08-15,Writing,8,#f2a437,0,0,,,black,11
-4,bar,2021-06-01,2021-09-01,Nokia Bells Lab Internship,8,#9bddf2,0,0,,bold.italic,black,13
-5,bar,2021-06-01,2021-08-15,IMWUT Paper #2 (Internship),8,#9bddf2,0,0,,bold.italic,black,12
-6,bar,2021-06-01,2021-08-15,Writing,8,#9bddf2,0,0,,,black,11
-7,bar,2021-06-01,2021-06-25,Study Set-up,8,#9bddf2,0,0,,,black,11
-8,bar,2021-06-25,2021-07-15,Data Collection,8,#9bddf2,0,0,,,black,11
-9,bar,2021-07-15,2021-08-15,Data Analysis,8,#9bddf2,18,0,center,,black,11
-10,bar,2021-08-15,2021-12-01,Thesis Write-Up,8,#eaff66,0,0,,bold.italic,black,13
-11,bar,2021-08-15,2021-11-01,Related Work,8,#eaff66,0,0,,,black,11
-12,bar,2021-09-15,2021-11-01,Paper Chapters,8,#eaff66,0,0,,,black,11
-13,bar,2021-10-15,2021-11-15,Introduction,8,#eaff66,0,0,,,black,11
-14,bar,2021-11-01,2021-12-01,Discussion,8,#eaff66,0,0,,,black,11
-15,marker,2021-08-15,2021-08-15,IMWUT Deadlines,10,#f55a0c,18,0,center,bold.italic,black,13
-15,marker,2021-11-15,2021-11-15,,10,#f55a0c,18,0,center,bold.italic,black,13
-17,vline,2021-08-15,2021-08-15,IMWUT Aug Deadline,1,grey,0,0,,bold.italic,#613e32,13
-18,vline,2021-11-15,2021-11-15,IMWUT Nov Deadline,1,grey,0,0,,bold.italic,#613e32,13
-19,vline,2021-12-01,2021-12-01,End,1,grey,0,0,,bold.italic,#613e32,13
+Index,Type,Start,End,Task,Size,Color,Extra,MarkerShape,MarkerOffsetY,MarkerXPos,LabelFace, LabelColor, LabelSize
+1,bar,2021-06-01,2021-09-01,Nokia Bells Lab Internship,8,#9bddf2,,0,0,,bold.italic,black,13
+2,bar,2021-06-01,2021-08-15,IMWUT Paper #2 (Internship),8,#9bddf2,,0,0,,bold.italic,black,12
+3,bar,2021-06-01,2021-08-15,Writing,8,#9bddf2,,0,0,,,black,11
+4,bar,2021-06-01,2021-06-25,Study Set-up,8,#9bddf2,,0,0,,,black,11
+5,bar,2021-06-25,2021-07-15,Data Collection,8,#9bddf2,,0,0,,,black,11
+6,bar,2021-07-15,2021-08-15,Data Analysis,8,#9bddf2,,18,0,center,,black,11
+7,bar,2021-08-15,2021-11-15,IMWUT Paper #3,8,#f2a437,,0,0,,bold.italic,black,13
+8,bar,2021-08-15,2021-09-15,Coding,8,#f2a437,,0,0,,,black,11
+9,bar,2021-09-15,2021-11-15,Writing,8,#f2a437,,0,0,,,black,11
+10,bar,2021-08-15,2021-12-01,Thesis Write-Up,8,#eaff66,,0,0,,bold.italic,black,13
+11,bar,2021-08-15,2021-10-15,Related Work,8,#eaff66,,0,0,,,black,11
+12,bar,2021-09-15,2021-11-01,Paper Chapters,8,#eaff66,,0,0,,,black,11
+13,bar,2021-10-15,2021-11-15,Introduction,8,#eaff66,,0,0,,,black,11
+14,bar,2021-11-01,2021-12-01,Discussion and Conclusion,8,#eaff66,,0,0,,,black,11
+15,marker,2021-08-15,2021-08-15,IMWUT Deadlines,6,#f55a0c,,18,0,center,bold.italic,black,13
+15,marker,2021-11-15,2021-11-15,,6,#f55a0c,,18,0,center,bold.italic,black,13
+17,vline,2021-08-15,2021-08-15,"IMWUT
+Aug Deadline",1,grey,dashed,0,0,,bold.italic,#613e32,13
+17,vline,2021-11-15,2021-11-15,"IMWUT
+Nov Deadline",1,grey,dashed,0,0,,bold.italic,#613e32,13
+17,vline,2021-12-01,2021-12-01,End,1,grey,dotted,0,0,,bold.italic,#613e32,13
